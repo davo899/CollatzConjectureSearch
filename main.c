@@ -4,30 +4,6 @@
 #include "vint.h"
 #include "vintcollatz.h"
 
-void writeBinFile(filename, buffer, n)
-char filename[];
-unsigned char buffer[];
-int n;
-{
-    FILE *write_ptr;
-
-    write_ptr = fopen(filename,"wb");  // w for write, b for binary
-
-    fwrite(buffer,n,1,write_ptr); // write 10 bytes from our buffer
-}
-
-void readBinFile(filename, n)
-char filename[];
-int n;
-{
-    unsigned char buffer[n];
-    FILE *ptr;
-
-    ptr = fopen("test.bin","rb");  // r for read, b for binary
-
-    fread(buffer,n,1,ptr);
-}
-
 void maxCollatzIterator()
 {
     int len = 1000;
