@@ -1,9 +1,5 @@
 #include <stdbool.h>
-
-struct vNatural {
-    int length;
-    int digits[];
-};
+#include "vNatural.h"
 
 extern struct vNatural* CONST_ZERO;
 extern struct vNatural* CONST_ONE;

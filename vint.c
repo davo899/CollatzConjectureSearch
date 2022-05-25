@@ -3,10 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-struct vNatural {
-    int length;
-    int digits[];
-};
+#include "vNatural.h"
 
 struct vNatural* CONST_ZERO;
 struct vNatural* CONST_ONE;
@@ -25,7 +22,7 @@ struct vNatural* y;
         maxDigits = y->length;
     }
 
-    struct vNatural* result = malloc(sizeof(struct vNatural) + ((maxDigits + 1) * sizeof(int)));
+    struct vNatural* result = malloc(sizeof(struct vNatural) + ((maxDigits + 1) * sizeof(short)));
     result->length = maxDigits;
 
     int carry = 0;
@@ -86,7 +83,7 @@ int n;
         digitCheck = digitCheck * 10;
     }
 
-    struct vNatural* result = malloc(sizeof(struct vNatural) + (digits*sizeof(int)));
+    struct vNatural* result = malloc(sizeof(struct vNatural) + (digits*sizeof(short)));
     result->length = digits;
 
     for (int i = 0; i < digits; i++) {
@@ -100,7 +97,7 @@ int n;
 struct vNatural* half(n)
 struct vNatural* n;
 {
-    struct vNatural* result = malloc(sizeof(struct vNatural) + (n->length * sizeof(int)));
+    struct vNatural* result = malloc(sizeof(struct vNatural) + (n->length * sizeof(short)));
     result->length = n->length;
 
     for (int i = 0; i < n->length; i++) {
